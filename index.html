@@ -14,7 +14,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/function-plot/dist/function-plot.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://api.munetios.com/beautiful-css/beautiful.css">
     <style>
         :root {
             --background-start-dark: #581c87; /* Purple-ish */
@@ -29,7 +30,7 @@
             background-image: linear-gradient(to right, var(--background-start-light), var(--background-end-light));
         }
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
         .icon-sm, .icon-md { 
             font-size: 1.25rem;
@@ -38,13 +39,6 @@
             font-size: 1.5rem;
         }
 
-        .liquid-glass {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-        }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         input[type="datetime-local"] {
@@ -88,7 +82,7 @@
 
     <div id="app-container" class="flex h-screen overflow-hidden">
         <!-- Sidebar -->
-        <aside id="sidebar" class="liquid-glass text-white w-64 flex flex-col flex-shrink-0 transition-all duration-300 ease-in-out -translate-x-full sm:translate-x-0">
+        <aside id="sidebar" class="liquid-glass text-white w-64 flex flex-col flex-shrink-0 transition-all duration-300 ease-in-out -translate-x-full sm:translate-x-0 transparency-md">
             <div class="p-4 flex items-center justify-between h-16 border-b border-slate-700/50 flex-shrink-0">
                 <div class="flex items-center">
                     <i class="ri-calculator-line icon-md text-pink-400"></i>
@@ -159,7 +153,7 @@
         <!-- Main Viewport -->
         <div class="flex-1 flex flex-col overflow-hidden">
             <!-- Topbar -->
-            <header id="topbar" class="liquid-glass text-white flex-shrink-0">
+            <header id="topbar" class="liquid-glass text-white flex-shrink-0 transparency-md">
                 <div class="flex items-center justify-between p-4 h-16 border-b border-slate-700/50">
                     <div class="flex items-center">
                         <button id="menu-btn" class="sm:hidden mr-2 p-2 rounded-full hover:bg-slate-700">
@@ -206,7 +200,7 @@
                 </main>
 
                 <!-- Right Panels -->
-                <aside id="right-panels" class="liquid-glass flex-shrink-0 border-l border-slate-700/50 flex flex-col relative">
+                <aside id="right-panels" class="liquid-glass flex-shrink-0 border-l border-slate-700/50 flex flex-col relative transparency-md">
                     <button id="right-panel-close-btn" class="absolute top-2 right-2 p-2 rounded-full hover:bg-slate-700/50 z-10 hidden">
                         <i class="ri-close-line icon-md"></i>
                     </button>
@@ -215,8 +209,8 @@
             </div>
             
             <!-- Footer -->
-            <footer class="text-center text-xs text-slate-400 p-2 border-t border-slate-700/50 flex-shrink-0 liquid-glass">
-              <p>  Munetios™️ and Munetios Calculator™️ are trademarked. </p>
+            <footer class="text-center text-xs text-slate-400 p-2 border-t border-slate-700/50 flex-shrink-0 liquid-glass transparency-md">
+              <p>  Munetios™️ and Munetios Calculator™️ are trademarked. Made by Munetios. </p>
                 <p> <a href="https://www.munetios.com/policies/#/terms">Terms</a> | <a href="https://www.munetios.com/policies/#/privacy">Privacy</a> </p>
             </footer>
         </div>
@@ -520,6 +514,8 @@
                     <div class="liquid-glass rounded-3xl shadow-lg p-6">
                          <h2 class="text-2xl font-bold text-center text-pink-400 mb-4">Changelog</h2>
                          <div class="space-y-3 text-slate-300 max-h-64 overflow-y-auto">
+                            <div><strong class="text-purple-400">v1.8.5</strong><ul class="list-disc list-inside pl-2"><li>Made the UI beautiful.</li></ul></div>
+                            <div><strong class="text-purple-400">v1.8.4</strong><ul class="list-disc list-inside pl-2"><li>Added Programmer and Graphic calculators.</li></ul></div>
                             <div><strong class="text-purple-400">v1.8.3</strong><ul class="list-disc list-inside pl-2"><li>Added division by zero handling.</li><li>Added new '1e' operator in advanced mode.</li><li>Implemented AI suggestions for faster queries.</li></ul></div>
                             <div><strong class="text-purple-400">v1.8.2</strong><ul class="list-disc list-inside pl-2"><li>Replaced Google Material Symbols with Remix Icon font for a new look and feel.</li></ul></div>
                             <div><strong class="text-purple-400">v1.8.1</strong><ul class="list-disc list-inside pl-2"><li>Replaced custom SVGs with official Google Material Symbol SVGs to ensure correct branding and accessibility.</li><li>Removed external font stylesheet to improve performance and reliability in all regions.</li></ul></div>
@@ -541,9 +537,9 @@
                          </div>
                     </div>
                     <div class="text-center text-slate-400 text-sm py-4">
-                        <p class="mb-2">Made by GAMERYTDeveloper</p>
+                        <p class="mb-2">Made by Munetios</p>
                         <p class="mb-2">Munetios™️ and Munetios Calculator™️ are trademarked.</p>
-                        <a href="https://gamerytdeveloper.github.io/munetios-calculator/help/help.html" target="_blank" class="text-purple-400 hover:text-pink-400 underline">Help (F1)</a>
+                        <a href="https://calculator.munetios.com/help/help.html" target="_blank" class="text-purple-400 hover:text-pink-400 underline">Help (F1)</a>
                     </div>
                 </div>
                 <style>.toggle-checkbox:checked { right: 0; border-color: #ec4899; } .toggle-checkbox:checked + .toggle-label { background-color: #ec4899; }</style>`;
@@ -1716,7 +1712,7 @@
             document.addEventListener('keydown', e => {
                 if (e.key === 'F1') {
                     e.preventDefault();
-                    window.open('https://gamerytdeveloper.github.io/munetios-calculator/help/help.html', '_blank');
+                    window.open('https://calculator.munetios.com/help/help.html', '_blank');
                 }
                 if (e.ctrlKey && e.shiftKey) {
                     if (e.key.toLowerCase() === 'a') {
