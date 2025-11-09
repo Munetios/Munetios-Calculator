@@ -1,7 +1,7 @@
 Munetios-Calculator
 The ultimate calculator web application built with a sleek, modern interface. This project goes beyond simple arithmetic, offering a full suite of scientific functions, numerous unit converters, specialty tools, and an integrated AI assistant.
 
-Live :  https://gamerytdeveloper.github.io/Munetios-Calculator/
+Live :  https://munetios.github.io/Munetios-Calculator/
 ✨ Features
 This calculator is packed with features to handle a wide range of calculations and conversions:
 
@@ -138,6 +138,6 @@ Major mobile responsiveness overhaul.
 v1.0.0
 Initial release of Muentios Calculator.
 📧 Contact
-This project was created by GAMERYTDeveloper.
+This project was created by Munetios.
 
 For any questions, feedback, or suggestions, feel free to reach out via email: minecraftgamer97529@gmail.com
