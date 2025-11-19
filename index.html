@@ -81,180 +81,182 @@
         }
     </style>
 </head>
-<body class="bg-slate-900 text-white font-sans transition-colors duration-300">
+<body class="bg-transparent text-white font-sans transition-colors duration-300 flex h-screen overflow-hidden">
 
-    <div id="app-container" class="flex h-screen overflow-hidden">
-        <!-- Sidebar -->
-        <aside id="sidebar" class="liquid-glass text-white w-64 flex flex-col flex-shrink-0 transition-all duration-300 ease-in-out -translate-x-full sm:translate-x-0 transparency-md">
-            <div class="p-4 flex items-center justify-between h-16 border-b border-slate-700/50 flex-shrink-0">
-                <div class="flex items-center">
-                    <i class="ri-calculator-line icon-md text-pink-400"></i>
-                    <h1 class="text-xl font-bold ml-2 sidebar-text">Calculator</h1>
+    <!-- Sidebar -->
+    <aside id="sidebar" class="liquid-glass text-white w-64 flex flex-col flex-shrink-0 transition-all duration-300 ease-in-out -translate-x-full sm:translate-x-0 transparency-md border-r border-slate-700/30 z-50">
+        <div class="p-4 flex items-center justify-between h-16 border-b border-slate-700/30 flex-shrink-0">
+            <div class="flex items-center">
+                <i class="ri-calculator-line icon-md text-pink-400"></i>
+                <h1 class="text-xl font-bold ml-2 sidebar-text">Calculator</h1>
+            </div>
+            <button id="sidebar-close-btn" class="sm:hidden p-2 rounded-full hover:bg-white/10">
+                    <i class="ri-close-line icon-md"></i>
+            </button>
+        </div>
+        <nav id="sidebar-nav" class="p-4 space-y-2 overflow-y-auto">
+                <div id="sidebar-main-nav" class="space-y-2">
+                <button class="flex items-center p-2 text-base w-full font-normal text-slate-200 rounded-3xl hover:bg-white/10 hover-zoom active-scale transition-all" data-page="standard">
+                    <i class="ri-function-line icon-md"></i><span class="ml-3 sidebar-text">Standard</span></button>
+                <button class="flex items-center p-2 text-base w-full font-normal text-slate-200 rounded-3xl hover:bg-white/10 hover-zoom active-scale transition-all" data-page="graphic">
+                    <i class="ri-line-chart-line icon-md"></i><span class="ml-3 sidebar-text">Graphic</span></button>
+                <button class="flex items-center p-2 text-base w-full font-normal text-slate-200 rounded-3xl hover:bg-white/10 hover-zoom active-scale transition-all" data-page="programmer">
+                    <i class="ri-code-s-slash-line icon-md"></i><span class="ml-3 sidebar-text">Programmer</span></button>
+                <button class="flex items-center p-2 text-base w-full font-normal text-slate-200 rounded-3xl hover:bg-white/10 hover-zoom active-scale transition-all" data-page="inbounding">
+                    <i class="ri-archive-line icon-md"></i><span class="ml-3 sidebar-text">Inbounding</span></button>
+                <button class="flex items-center p-2 text-base w-full font-normal text-slate-200 rounded-3xl hover:bg-white/10 hover-zoom active-scale transition-all" data-page="battery">
+                    <i class="ri-battery-charge-line icon-md"></i><span class="ml-3 sidebar-text">Battery</span></button>
+                <button class="flex items-center p-2 text-base w-full font-normal text-slate-200 rounded-3xl hover:bg-white/10 hover-zoom active-scale transition-all" data-page="math_notes">
+                    <i class="ri-edit-2-line icon-md"></i><span class="ml-3 sidebar-text">Math Notes</span></button>
+                <button class="flex items-center p-2 text-base w-full font-normal text-slate-200 rounded-3xl hover:bg-white/10 hover-zoom active-scale transition-all" data-page="time">
+                    <i class="ri-time-line icon-md"></i><span class="ml-3 sidebar-text">Time</span></button>
+                <button class="flex items-center p-2 text-base w-full font-normal text-slate-200 rounded-3xl hover:bg-white/10 hover-zoom active-scale transition-all" data-page="storage">
+                    <i class="ri-database-2-line icon-md"></i><span class="ml-3 sidebar-text">Storage</span></button>
+                <button class="flex items-center p-2 text-base w-full font-normal text-slate-200 rounded-3xl hover:bg-white/10 hover-zoom active-scale transition-all" data-page="currency">
+                    <i class="ri-money-dollar-circle-line icon-md"></i><span class="ml-3 sidebar-text">Currency</span></button>
+                <button class="flex items-center p-2 text-base w-full font-normal text-slate-200 rounded-3xl hover:bg-white/10 hover-zoom active-scale transition-all" data-page="angle">
+                    <i class="ri-ruler-line icon-md"></i><span class="ml-3 sidebar-text">Angle</span></button>
+                <button class="flex items-center p-2 text-base w-full font-normal text-slate-200 rounded-3xl hover:bg-white/10 hover-zoom active-scale transition-all" data-page="pressure">
+                    <i class="ri-compasses-2-line icon-md"></i><span class="ml-3 sidebar-text">Pressure</span></button>
+                <button class="flex items-center p-2 text-base w-full font-normal text-slate-200 rounded-3xl hover:bg-white/10 hover-zoom active-scale transition-all" data-page="weight">
+                    <i class="ri-scales-3-line icon-md"></i><span class="ml-3 sidebar-text">Weight</span></button>
+                <button class="flex items-center p-2 text-base w-full font-normal text-slate-200 rounded-3xl hover:bg-white/10 hover-zoom active-scale transition-all" data-page="speed">
+                    <i class="ri-speed-up-line icon-md"></i><span class="ml-3 sidebar-text">Speed</span></button>
+                <button class="flex items-center p-2 text-base w-full font-normal text-slate-200 rounded-3xl hover:bg-white/10 hover-zoom active-scale transition-all" data-page="temp">
+                    <i class="ri-temp-hot-line icon-md"></i><span class="ml-3 sidebar-text">Temp</span></button>
+                <button class="flex items-center p-2 text-base w-full font-normal text-slate-200 rounded-3xl hover:bg-white/10 hover-zoom active-scale transition-all" data-page="length">
+                    <i class="ri-ruler-2-line icon-md"></i><span class="ml-3 sidebar-text">Length</span></button>
+                <button class="flex items-center p-2 text-base w-full font-normal text-slate-200 rounded-3xl hover:bg-white/10 hover-zoom active-scale transition-all" data-page="fuel">
+                    <i class="ri-gas-station-line icon-md"></i><span class="ml-3 sidebar-text">Fuel</span></button>
+                <button class="flex items-center p-2 text-base w-full font-normal text-slate-200 rounded-3xl hover:bg-white/10 hover-zoom active-scale transition-all" data-page="volume">
+                    <i class="ri-flask-line icon-md"></i><span class="ml-3 sidebar-text">Volume</span></button>
+                <button class="flex items-center p-2 text-base w-full font-normal text-slate-200 rounded-3xl hover:bg-white/10 hover-zoom active-scale transition-all" data-page="area">
+                    <i class="ri-square-line"></i><span class="ml-3 sidebar-text">Area</span></button>
+                <button class="flex items-center p-2 text-base w-full font-normal text-slate-200 rounded-3xl hover:bg-white/10 hover-zoom active-scale transition-all" data-page="power">
+                    <i class="ri-flashlight-line icon-md"></i><span class="ml-3 sidebar-text">Power</span></button>
+                <button class="flex items-center p-2 text-base w-full font-normal text-slate-200 rounded-3xl hover:bg-white/10 hover-zoom active-scale transition-all" data-page="energy">
+                    <i class="ri-fire-line icon-md"></i><span class="ml-3 sidebar-text">Energy</span></button>
+                <button class="flex items-center p-2 text-base w-full font-normal text-slate-200 rounded-3xl hover:bg-white/10 hover-zoom active-scale transition-all" data-page="force">
+                    <i class="ri-drag-move-2-line icon-md"></i><span class="ml-3 sidebar-text">Force</span></button>
+                <button class="flex items-center p-2 text-base w-full font-normal text-slate-200 rounded-3xl hover:bg-white/10 hover-zoom active-scale transition-all" data-page="percent">
+                    <i class="ri-percent-line icon-md"></i><span class="ml-3 sidebar-text">Check %</span></button>
+                <button class="flex items-center p-2 text-base w-full font-normal text-slate-200 rounded-3xl hover:bg-white/10 hover-zoom active-scale transition-all" data-page="settings">
+                    <i class="ri-settings-3-line icon-md"></i><span class="ml-3 sidebar-text">Settings</span></button>
                 </div>
-                <button id="sidebar-close-btn" class="sm:hidden p-2 rounded-full hover:bg-slate-700">
-                     <i class="ri-close-line icon-md"></i>
+                <div id="sidebar-more-container" class="hidden relative">
+                <button id="sidebar-more-btn" class="flex items-center p-2 text-base w-full font-normal text-slate-200 rounded-3xl hover:bg-white/10 hover-zoom active-scale transition-all">
+                    <i class="ri-more-2-fill icon-md"></i><span class="ml-3 sidebar-text">More</span>
                 </button>
-            </div>
-            <nav id="sidebar-nav" class="p-4 space-y-2 overflow-y-auto">
-                 <div id="sidebar-main-nav" class="space-y-2">
-                    <button class="flex items-center p-2 text-base w-full font-normal text-slate-300 rounded-3xl hover:bg-slate-700/50" data-page="standard">
-                        <i class="ri-function-line icon-md"></i><span class="ml-3 sidebar-text">Standard</span></button>
-                    <button class="flex items-center p-2 text-base w-full font-normal text-slate-300 rounded-3xl hover:bg-slate-700/50" data-page="graphic">
-                        <i class="ri-line-chart-line icon-md"></i><span class="ml-3 sidebar-text">Graphic</span></button>
-                    <button class="flex items-center p-2 text-base w-full font-normal text-slate-300 rounded-3xl hover:bg-slate-700/50" data-page="programmer">
-                        <i class="ri-code-s-slash-line icon-md"></i><span class="ml-3 sidebar-text">Programmer</span></button>
-                    <button class="flex items-center p-2 text-base w-full font-normal text-slate-300 rounded-3xl hover:bg-slate-700/50" data-page="math_notes">
-                        <i class="ri-edit-2-line icon-md"></i><span class="ml-3 sidebar-text">Math Notes</span></button>
-                    <button class="flex items-center p-2 text-base w-full font-normal text-slate-300 rounded-3xl hover:bg-slate-700/50" data-page="time">
-                        <i class="ri-time-line icon-md"></i><span class="ml-3 sidebar-text">Time</span></button>
-                    <button class="flex items-center p-2 text-base w-full font-normal text-slate-300 rounded-3xl hover:bg-slate-700/50" data-page="storage">
-                        <i class="ri-database-2-line icon-md"></i><span class="ml-3 sidebar-text">Storage</span></button>
-                    <button class="flex items-center p-2 text-base w-full font-normal text-slate-300 rounded-3xl hover:bg-slate-700/50" data-page="currency">
-                        <i class="ri-money-dollar-circle-line icon-md"></i><span class="ml-3 sidebar-text">Currency</span></button>
-                    <button class="flex items-center p-2 text-base w-full font-normal text-slate-300 rounded-3xl hover:bg-slate-700/50" data-page="angle">
-                        <i class="ri-ruler-line icon-md"></i><span class="ml-3 sidebar-text">Angle</span></button>
-                    <button class="flex items-center p-2 text-base w-full font-normal text-slate-300 rounded-3xl hover:bg-slate-700/50" data-page="pressure">
-                        <i class="ri-compasses-2-line icon-md"></i><span class="ml-3 sidebar-text">Pressure</span></button>
-                    <button class="flex items-center p-2 text-base w-full font-normal text-slate-300 rounded-3xl hover:bg-slate-700/50" data-page="weight">
-                        <i class="ri-scales-3-line icon-md"></i><span class="ml-3 sidebar-text">Weight</span></button>
-                    <button class="flex items-center p-2 text-base w-full font-normal text-slate-300 rounded-3xl hover:bg-slate-700/50" data-page="speed">
-                        <i class="ri-speed-up-line icon-md"></i><span class="ml-3 sidebar-text">Speed</span></button>
-                    <button class="flex items-center p-2 text-base w-full font-normal text-slate-300 rounded-3xl hover:bg-slate-700/50" data-page="temp">
-                        <i class="ri-temp-hot-line icon-md"></i><span class="ml-3 sidebar-text">Temp</span></button>
-                    <button class="flex items-center p-2 text-base w-full font-normal text-slate-300 rounded-3xl hover:bg-slate-700/50" data-page="length">
-                        <i class="ri-ruler-2-line icon-md"></i><span class="ml-3 sidebar-text">Length</span></button>
-                    <button class="flex items-center p-2 text-base w-full font-normal text-slate-300 rounded-3xl hover:bg-slate-700/50" data-page="fuel">
-                        <i class="ri-gas-station-line icon-md"></i><span class="ml-3 sidebar-text">Fuel</span></button>
-                    <button class="flex items-center p-2 text-base w-full font-normal text-slate-300 rounded-3xl hover:bg-slate-700/50" data-page="volume">
-                        <i class="ri-flask-line icon-md"></i><span class="ml-3 sidebar-text">Volume</span></button>
-                    <button class="flex items-center p-2 text-base w-full font-normal text-slate-300 rounded-3xl hover:bg-slate-700/50" data-page="area">
-                       <i class="ri-square-line"></i><span class="ml-3 sidebar-text">Area</span></button>
-                    <button class="flex items-center p-2 text-base w-full font-normal text-slate-300 rounded-3xl hover:bg-slate-700/50" data-page="power">
-                        <i class="ri-flashlight-line icon-md"></i><span class="ml-3 sidebar-text">Power</span></button>
-                    <button class="flex items-center p-2 text-base w-full font-normal text-slate-300 rounded-3xl hover:bg-slate-700/50" data-page="energy">
-                        <i class="ri-fire-line icon-md"></i><span class="ml-3 sidebar-text">Energy</span></button>
-                    <button class="flex items-center p-2 text-base w-full font-normal text-slate-300 rounded-3xl hover:bg-slate-700/50" data-page="force">
-                        <i class="ri-drag-move-2-line icon-md"></i><span class="ml-3 sidebar-text">Force</span></button>
-                    <button class="flex items-center p-2 text-base w-full font-normal text-slate-300 rounded-3xl hover:bg-slate-700/50" data-page="percent">
-                        <i class="ri-percent-line icon-md"></i><span class="ml-3 sidebar-text">Check %</span></button>
-                    <button class="flex items-center p-2 text-base w-full font-normal text-slate-300 rounded-3xl hover:bg-slate-700/50" data-page="settings">
-                        <i class="ri-settings-3-line icon-md"></i><span class="ml-3 sidebar-text">Settings</span></button>
-                 </div>
-                 <div id="sidebar-more-container" class="hidden relative">
-                    <button id="sidebar-more-btn" class="flex items-center p-2 text-base w-full font-normal text-slate-300 rounded-3xl hover:bg-slate-700/50">
-                        <i class="ri-more-2-fill icon-md"></i><span class="ml-3 sidebar-text">More</span>
-                    </button>
-                    <div id="sidebar-more-menu" class="hidden absolute bottom-full left-0 mb-2 w-full p-2 bg-slate-800 rounded-3xl shadow-lg z-20 space-y-2 overflow-y-auto max-h-64">
-                        <!-- Collapsed items go here -->
-                    </div>
-                 </div>
-                 <a id="sidebar-contact-btn" href="mailto:minecraftgamer97529@gmail.com" target="_blank" class="hidden items-center p-2 text-base font-normal text-slate-300 rounded-3xl hover:bg-slate-700/50">
-                    <i class="ri-mail-line icon-md"></i><span class="ml-3 sidebar-text">Contact</span></a>
-            </nav>
-        </aside>
+                <div id="sidebar-more-menu" class="hidden absolute bottom-full left-0 mb-2 w-full p-2 bg-slate-800/80 backdrop-blur-md rounded-3xl shadow-lg z-20 space-y-2 overflow-y-auto max-h-64">
+                    <!-- Collapsed items go here -->
+                </div>
+                </div>
+                <a id="sidebar-contact-btn" href="mailto:minecraftgamer97529@gmail.com" target="_blank" class="hidden items-center p-2 text-base font-normal text-slate-200 rounded-3xl hover:bg-white/10 hover-zoom active-scale transition-all">
+                <i class="ri-mail-line icon-md"></i><span class="ml-3 sidebar-text">Contact</span></a>
+        </nav>
+    </aside>
 
-        <!-- Main Viewport -->
-        <div class="flex-1 flex flex-col overflow-hidden">
-            <!-- Topbar -->
-            <header id="topbar" class="liquid-glass text-white flex-shrink-0 transparency-md">
-                <div class="flex items-center justify-between p-4 h-16 border-b border-slate-700/50">
-                    <div class="flex items-center">
-                        <button id="menu-btn" class="sm:hidden mr-2 p-2 rounded-full hover:bg-slate-700">
-                          <i class="ri-menu-line icon-md"></i>
-                        </button>
+    <!-- Main Viewport -->
+    <div class="flex-1 flex flex-col overflow-hidden bg-transparent">
+        <!-- Topbar -->
+        <header id="topbar" class="liquid-glass text-white flex-shrink-0 transparency-md border-b border-slate-700/30">
+            <div class="flex items-center justify-between p-4 h-16">
+                <div class="flex items-center">
+                    <button id="menu-btn" class="sm:hidden mr-2 p-2 rounded-full hover:bg-white/10 transition-colors">
+                        <i class="ri-menu-line icon-md"></i>
+                    </button>
+                </div>
+                <div id="search-bar-wrapper" class="flex-1 flex justify-center">
+                    <div id="desktop-search-container" class="relative w-full" style="max-width: 800px;">
+                        <i class="ri-search-line icon-md absolute left-3 top-1/2 -translate-y-1/2 text-slate-300"></i>
+                        <input id="history-search" type="text" placeholder="Search History" class="bg-white/10 border border-slate-500/30 text-white placeholder-slate-400 rounded-3xl w-full pl-10 pr-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500 backdrop-blur-sm">
                     </div>
-                    <div id="search-bar-wrapper" class="flex-1 flex justify-center">
-                        <div id="desktop-search-container" class="relative w-full" style="max-width: 800px;">
-                            <i class="ri-search-line icon-md absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
-                            <input id="history-search" type="text" placeholder="Search History" class="bg-slate-800/50 border border-slate-700 rounded-3xl w-full pl-10 pr-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500">
+                </div>
+                <div class="flex items-center space-x-2 ml-2">
+                    <a id="desktop-contact-btn" href="mailto:minecraftgamer97529@gmail.com" target="_blank" class="flex items-center bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-3xl transition-all hover-zoom active-scale shadow-glow">
+                        <i class="ri-mail-line icon-sm mr-1"></i>
+                        <span id="contact-btn-text">Contact</span>
+                    </a>
+                    <button id="mobile-search-btn" class="hidden p-2 rounded-full hover:bg-white/10 transition-colors">
+                        <i class="ri-search-line icon-md"></i>
+                    </button>
+                    <button id="history-btn" class="p-2 rounded-full hover:bg-white/10 transition-colors">
+                        <i class="ri-history-line icon-md"></i>
+                    </button>
+                    <button id="ai-btn" class="p-2 rounded-full hover:bg-white/10 transition-colors">
+                        <i class="ri-robot-2-line icon-md"></i>
+                    </button>
+                </div>
+            </div>
+                <!-- Mobile Search -->
+            <div id="mobile-search-view" class="hidden p-2 liquid-glass border-t border-slate-700/30 absolute w-full z-20 top-16 left-0">
+                <div class="flex items-center">
+                    <button id="mobile-search-back-btn" class="p-2 rounded-full hover:bg-white/10">
+                        <i class="ri-arrow-left-line icon-md"></i>
+                    </button>
+                    <input id="mobile-history-search" type="text" placeholder="Search History..." class="bg-transparent w-full ml-2 focus:outline-none text-white">
+                </div>
+            </div>
+        </header>
+
+        <!-- Content Area -->
+        <div class="flex-1 flex flex-row overflow-hidden">
+            <main id="main-content" class="flex-1 flex flex-col overflow-y-auto bg-transparent">
+                <!-- Dynamic content goes here -->
+            </main>
+
+            <!-- Right Panels -->
+            <aside id="right-panels" class="liquid-glass flex-shrink-0 border-l border-slate-700/30 flex flex-col relative transparency-md bg-transparent">
+                <button id="right-panel-close-btn" class="absolute top-2 right-2 p-2 rounded-full hover:bg-white/10 z-10 hidden">
+                    <i class="ri-close-line icon-md"></i>
+                </button>
+                <!-- This is a persistent container for the panels -->
+            </aside>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="text-center text-xs text-slate-300 p-2 border-t border-slate-700/30 flex-shrink-0 liquid-glass transparency-md">
+            <p>  Munetios™️ and Munetios Calculator™️ are trademarked. Made by Munetios. </p>
+            <p> <a href="https://www.munetios.com/policies/#/terms" class="hover:text-white underline">Terms</a> | <a href="https://www.munetios.com/policies/#/privacy" class="hover:text-white underline">Privacy</a> </p>
+        </footer>
+    </div>
+
+    <!-- Mobile Bottom Sheet -->
+    <div id="mobile-bottom-sheet" class="fixed bottom-0 left-0 right-0 h-1/2 liquid-glass transform translate-y-full transition-transform duration-300 ease-in-out flex flex-col z-50 border-t border-slate-700/30 backdrop-blur-xl">
+        <div id="sheet-header" class="p-4 border-b border-slate-700/30 flex justify-between items-center flex-shrink-0 bg-black/20">
+                <h2 id="sheet-title" class="text-lg font-bold text-white"></h2>
+                <button id="sheet-close-btn" class="p-2 hover:bg-white/10 rounded-full"><i class="ri-arrow-down-s-line icon-md"></i></button>
+        </div>
+        <div id="sheet-content" class="flex-1 overflow-y-auto bg-transparent">
+            <!-- Mobile history/ai content will be moved here -->
+        </div>
+    </div>
+
+    <!-- Panel Templates (kept out of sight, ready to be moved) -->
+    <div id="panel-templates" class="hidden">
+        <div id="history-panel" class="flex flex-col h-full bg-transparent">
+            <h2 class="text-lg font-bold p-4 border-b border-slate-700/30 flex-shrink-0 text-pink-400">History</h2>
+            <div id="history-list" class="flex-1 p-4 space-y-2 overflow-y-auto no-scrollbar">
+                <!-- History items go here -->
+            </div>
+            <button id="clear-history-btn" class="m-4 bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-3xl shadow-light hover-zoom active-scale transition-all">Clear History</button>
+        </div>
+        <div id="ai-panel" class="flex flex-col h-full bg-transparent">
+            <h2 class="text-lg font-bold p-4 border-b border-slate-700/30 flex-shrink-0 text-pink-400">AI Assistant</h2>
+            <div class="flex-1 p-4 flex flex-col overflow-hidden">
+                <div id="ai-output" class="liquid-glass rounded-3xl p-2 mb-4 overflow-y-auto no-scrollbar flex-grow bg-black/10"></div>
+                <div class="flex flex-shrink-0">
+                    <div class="relative flex-grow">
+                        <input id="ai-input" type="text" placeholder="Ask AI..." class="bg-white/10 border border-slate-600/50 rounded-l-3xl w-full p-2 focus:outline-none focus:ring-2 focus:ring-pink-500 text-white placeholder-slate-400">
+                        <div id="ai-suggestion-container" class="absolute inset-0 flex items-center pointer-events-none p-2 hidden">
+                            <span id="ai-input-mirror" class="invisible whitespace-pre"></span>
+                            <span id="ai-suggestion-text" class="text-slate-400 truncate opacity-70"></span>
+                            <i class="ri-arrow-right-line text-slate-400 ml-1 opacity-70"></i>
                         </div>
                     </div>
-                    <div class="flex items-center space-x-2 ml-2">
-                        <a id="desktop-contact-btn" href="mailto:minecraftgamer97529@gmail.com" target="_blank" class="flex items-center bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-3xl transition-colors">
-                            <i class="ri-mail-line icon-sm mr-1"></i>
-                            <span id="contact-btn-text">Contact</span>
-                        </a>
-                        <button id="mobile-search-btn" class="hidden p-2 rounded-full hover:bg-slate-700">
-                            <i class="ri-search-line icon-md"></i>
-                        </button>
-                        <button id="history-btn" class="p-2 rounded-full hover:bg-slate-700">
-                          <i class="ri-history-line icon-md"></i>
-                        </button>
-                        <button id="ai-btn" class="p-2 rounded-full hover:bg-slate-700">
-                          <i class="ri-robot-2-line icon-md"></i>
-                        </button>
-                    </div>
-                </div>
-                 <!-- Mobile Search -->
-                <div id="mobile-search-view" class="hidden p-2 bg-slate-800">
-                    <div class="flex items-center">
-                        <button id="mobile-search-back-btn" class="p-2 rounded-full hover:bg-slate-700">
-                            <i class="ri-arrow-left-line icon-md"></i>
-                        </button>
-                        <input id="mobile-history-search" type="text" placeholder="Search History..." class="bg-transparent w-full ml-2 focus:outline-none">
-                    </div>
-                </div>
-            </header>
-
-            <!-- Content Area -->
-            <div class="flex-1 flex flex-row overflow-hidden">
-                <main id="main-content" class="flex-1 flex flex-col overflow-y-auto">
-                    <!-- Dynamic content goes here -->
-                </main>
-
-                <!-- Right Panels -->
-                <aside id="right-panels" class="liquid-glass flex-shrink-0 border-l border-slate-700/50 flex flex-col relative transparency-md">
-                    <button id="right-panel-close-btn" class="absolute top-2 right-2 p-2 rounded-full hover:bg-slate-700/50 z-10 hidden">
-                        <i class="ri-close-line icon-md"></i>
+                    <button id="ai-submit-btn" class="bg-purple-600 hover:bg-purple-700 text-white font-bold p-2 rounded-r-3xl transition-all hover:bg-purple-500">
+                        <i class="ri-send-plane-2-line icon-md"></i>
                     </button>
-                    <!-- This is a persistent container for the panels -->
-                </aside>
-            </div>
-            
-            <!-- Footer -->
-            <footer class="text-center text-xs text-slate-400 p-2 border-t border-slate-700/50 flex-shrink-0 liquid-glass transparency-md">
-              <p>  Munetios™️ and Munetios Calculator™️ are trademarked. Made by Munetios. </p>
-                <p> <a href="https://www.munetios.com/policies/#/terms">Terms</a> | <a href="https://www.munetios.com/policies/#/privacy">Privacy</a> </p>
-            </footer>
-        </div>
-
-        <!-- Mobile Bottom Sheet -->
-        <div id="mobile-bottom-sheet" class="fixed bottom-0 left-0 right-0 h-1/2 bg-slate-800 transform translate-y-full transition-transform duration-300 ease-in-out flex flex-col">
-            <div id="sheet-header" class="p-4 border-b border-slate-700/50 flex justify-between items-center flex-shrink-0">
-                 <h2 id="sheet-title" class="text-lg font-bold"></h2>
-                 <button id="sheet-close-btn"><i class="ri-arrow-down-s-line icon-md"></i></button>
-            </div>
-            <div id="sheet-content" class="flex-1 overflow-y-auto">
-                <!-- Mobile history/ai content will be moved here -->
-            </div>
-        </div>
-
-        <!-- Panel Templates (kept out of sight, ready to be moved) -->
-        <div id="panel-templates" class="hidden">
-            <div id="history-panel" class="flex flex-col h-full">
-                <h2 class="text-lg font-bold p-4 border-b border-slate-700/50 flex-shrink-0">History</h2>
-                <div id="history-list" class="flex-1 p-4 space-y-2 overflow-y-auto no-scrollbar">
-                   <!-- History items go here -->
-                </div>
-                <button id="clear-history-btn" class="m-4 bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-3xl">Clear History</button>
-            </div>
-            <div id="ai-panel" class="flex flex-col h-full">
-                <h2 class="text-lg font-bold p-4 border-b border-slate-700/50 flex-shrink-0">AI Assistant</h2>
-                <div class="flex-1 p-4 flex flex-col overflow-hidden">
-                    <div id="ai-output" class="liquid-glass rounded-3xl p-2 mb-4 overflow-y-auto no-scrollbar"></div>
-                    <div class="flex flex-shrink-0">
-                        <div class="relative flex-grow">
-                            <input id="ai-input" type="text" placeholder="Ask AI..." class="bg-slate-800/50 border border-slate-700 rounded-l-3xl w-full p-2 focus:outline-none focus:ring-2 focus:ring-pink-500">
-                            <div id="ai-suggestion-container" class="absolute inset-0 flex items-center pointer-events-none p-2 hidden">
-                                <span id="ai-input-mirror" class="invisible whitespace-pre"></span>
-                                <span id="ai-suggestion-text" class="text-slate-500 truncate"></span>
-                                <i class="ri-arrow-right-line text-slate-500 ml-1"></i>
-                            </div>
-                        </div>
-                        <button id="ai-submit-btn" class="bg-purple-600 hover:bg-purple-700 text-white font-bold p-2 rounded-r-3xl">
-                            <i class="ri-send-plane-2-line icon-md"></i>
-                        </button>
-                    </div>
                 </div>
             </div>
         </div>
@@ -290,7 +292,7 @@
                     is2ndFlipped: false,
                     isRad: false, 
                     showMoreSci: false,
-                    is1eActive: false, // Flag for the new 1e operator
+                    is1eActive: false,
                     lastOperation: { operator: null, operand: null },
                 },
                 mathNotes: {
@@ -337,133 +339,191 @@
 
                 const advancedButtons = `
                     <div id="advanced-buttons" class="grid grid-cols-2 gap-2">
-                        <button class="text-base bg-purple-800 hover:bg-purple-900 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="toggle-more">more</button>
-                        <button class="text-base bg-purple-800 hover:bg-purple-900 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="rad-deg">${state.calc.isRad ? 'RAD' : 'DEG'}</button>
-                        <button class="text-base bg-purple-800 hover:bg-purple-900 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="(">(</button>
-                        <button class="text-base bg-purple-800 hover:bg-purple-900 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key=")">)</button>
-                        <button class="text-base bg-purple-800 hover:bg-purple-900 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="mc">mc</button>
-                        <button class="text-base bg-purple-800 hover:bg-purple-900 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="m+">m+</button>
-                        <button class="text-base bg-purple-800 hover:bg-purple-900 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="m-">m-</button>
-                        <button class="text-base bg-purple-800 hover:bg-purple-900 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="mr">mr</button>
-                        <button class="text-base bg-purple-800 hover:bg-purple-900 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="2nd">2nd</button>
-                        <button class="text-base bg-purple-800 hover:bg-purple-900 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="x^2">x²</button>
-                        <button class="text-base bg-purple-800 hover:bg-purple-900 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="x^3">x³</button>
-                        <button class="text-base bg-purple-800 hover:bg-purple-900 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="x^y">xʸ</button>
-                        <button class="text-base bg-purple-800 hover:bg-purple-900 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="e^x">eˣ</button>
-                        <button class="text-base bg-purple-800 hover:bg-purple-900 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="10^x">10ˣ</button>
-                        <button class="text-base bg-purple-800 hover:bg-purple-900 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="1/x">1/x</button>
-                        <button class="text-base bg-purple-800 hover:bg-purple-900 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="sqrt">√</button>
-                        <button class="text-base bg-purple-800 hover:bg-purple-900 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="cbrt">∛</button>
-                        <button class="text-base bg-purple-800 hover:bg-purple-900 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="y_sqrt_x">ʸ√x</button>
-                        <button class="text-base bg-purple-800 hover:bg-purple-900 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="+/-">+/-</button>
-                        <button class="text-base bg-purple-800 hover:bg-purple-900 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="pi">π</button>
+                        <button class="text-base bg-purple-800/80 hover:bg-purple-700 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="toggle-more">more</button>
+                        <button class="text-base bg-purple-800/80 hover:bg-purple-700 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="rad-deg">${state.calc.isRad ? 'RAD' : 'DEG'}</button>
+                        <button class="text-base bg-purple-800/80 hover:bg-purple-700 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="(">(</button>
+                        <button class="text-base bg-purple-800/80 hover:bg-purple-700 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key=")">)</button>
+                        <button class="text-base bg-purple-800/80 hover:bg-purple-700 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="mc">mc</button>
+                        <button class="text-base bg-purple-800/80 hover:bg-purple-700 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="m+">m+</button>
+                        <button class="text-base bg-purple-800/80 hover:bg-purple-700 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="m-">m-</button>
+                        <button class="text-base bg-purple-800/80 hover:bg-purple-700 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="mr">mr</button>
+                        <button class="text-base bg-purple-800/80 hover:bg-purple-700 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="2nd">2nd</button>
+                        <button class="text-base bg-purple-800/80 hover:bg-purple-700 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="x^2">x²</button>
+                        <button class="text-base bg-purple-800/80 hover:bg-purple-700 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="x^3">x³</button>
+                        <button class="text-base bg-purple-800/80 hover:bg-purple-700 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="x^y">xʸ</button>
+                        <button class="text-base bg-purple-800/80 hover:bg-purple-700 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="e^x">eˣ</button>
+                        <button class="text-base bg-purple-800/80 hover:bg-purple-700 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="10^x">10ˣ</button>
+                        <button class="text-base bg-purple-800/80 hover:bg-purple-700 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="1/x">1/x</button>
+                        <button class="text-base bg-purple-800/80 hover:bg-purple-700 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="sqrt">√</button>
+                        <button class="text-base bg-purple-800/80 hover:bg-purple-700 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="cbrt">∛</button>
+                        <button class="text-base bg-purple-800/80 hover:bg-purple-700 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="y_sqrt_x">ʸ√x</button>
+                        <button class="text-base bg-purple-800/80 hover:bg-purple-700 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="+/-">+/-</button>
+                        <button class="text-base bg-purple-800/80 hover:bg-purple-700 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="pi">π</button>
 
                         <div id="more-sci-functions" class="col-span-2 grid grid-cols-2 gap-2 ${state.calc.showMoreSci ? 'visible' : ''}">
-                            <button class="text-base bg-purple-800 hover:bg-purple-900 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="ln">ln</button>
-                            <button class="text-base bg-purple-800 hover:bg-purple-900 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="log10">log₁₀</button>
-                            <button class="text-base bg-purple-800 hover:bg-purple-900 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="x!">x!</button>
-                            <button class="text-base bg-purple-800 hover:bg-purple-900 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="sin">sin</button>
-                            <button class="text-base bg-purple-800 hover:bg-purple-900 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="cos">cos</button>
-                            <button class="text-base bg-purple-800 hover:bg-purple-900 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="tan">tan</button>
-                            <button class="text-base bg-purple-800 hover:bg-purple-900 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="e">e</button>
-                            <button class="text-base bg-purple-800 hover:bg-purple-900 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="EE">EE</button>
-                            <button class="text-base bg-purple-800 hover:bg-purple-900 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="1e">1e</button>
+                            <button class="text-base bg-purple-800/80 hover:bg-purple-700 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="ln">ln</button>
+                            <button class="text-base bg-purple-800/80 hover:bg-purple-700 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="log10">log₁₀</button>
+                            <button class="text-base bg-purple-800/80 hover:bg-purple-700 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="x!">x!</button>
+                            <button class="text-base bg-purple-800/80 hover:bg-purple-700 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="sin">sin</button>
+                            <button class="text-base bg-purple-800/80 hover:bg-purple-700 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="cos">cos</button>
+                            <button class="text-base bg-purple-800/80 hover:bg-purple-700 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="tan">tan</button>
+                            <button class="text-base bg-purple-800/80 hover:bg-purple-700 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="e">e</button>
+                            <button class="text-base bg-purple-800/80 hover:bg-purple-700 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="EE">EE</button>
+                            <button class="text-base bg-purple-800/80 hover:bg-purple-700 text-white font-bold rounded-3xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="1e">1e</button>
                         </div>
                     </div>
                 `;
 
                 return `
-                <div id="calculator" class="w-full max-w-2xl mx-auto h-full liquid-glass rounded-3xl shadow-lg p-4 flex flex-col">
+                <div id="calculator" class="w-full max-w-2xl mx-auto h-full liquid-glass rounded-3xl shadow-heavy p-4 flex flex-col border border-white/10 bg-black/20">
                     <div class="relative">
-                        <div id="expression-display" class="text-right text-slate-400 text-2xl h-8 pr-4 break-all truncate"></div>
-                        <div id="display" class="bg-slate-800/60 text-right text-white p-4 rounded-3xl text-5xl overflow-x-auto no-scrollbar break-all flex-shrink-0">0</div>
+                        <div id="expression-display" class="text-right text-slate-300 text-2xl h-8 pr-4 break-all truncate"></div>
+                        <div id="display" class="bg-white/10 text-right text-white p-4 rounded-3xl text-5xl overflow-x-auto no-scrollbar break-all flex-shrink-0 shadow-inner backdrop-blur-sm">0</div>
                     </div>
                     <div class="flex-grow mt-4 flex gap-2">
                         ${advancedMode ? advancedButtons : ''}
                         <div class="grid ${gridClass} gap-2 flex-grow">
-                            <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="AC">AC</button>
-                            <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="DEL">DEL</button>
-                            <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="%">%</button>
-                            <button class="bg-pink-600 hover:bg-pink-700 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="/">÷</button>
-                            <button class="bg-slate-800 dark:bg-slate-700 hover:bg-slate-700 dark:hover:bg-slate-600 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="7">7</button>
-                            <button class="bg-slate-800 dark:bg-slate-700 hover:bg-slate-700 dark:hover:bg-slate-600 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="8">8</button>
-                            <button class="bg-slate-800 dark:bg-slate-700 hover:bg-slate-700 dark:hover:bg-slate-600 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="9">9</button>
-                            <button class="bg-pink-600 hover:bg-pink-700 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="*">x</button>
-                            <button class="bg-slate-800 dark:bg-slate-700 hover:bg-slate-700 dark:hover:bg-slate-600 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="4">4</button>
-                            <button class="bg-slate-800 dark:bg-slate-700 hover:bg-slate-700 dark:hover:bg-slate-600 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="5">5</button>
-                            <button class="bg-slate-800 dark:bg-slate-700 hover:bg-slate-700 dark:hover:bg-slate-600 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="6">6</button>
-                            <button class="bg-pink-600 hover:bg-pink-700 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="-">-</button>
-                            <button class="bg-slate-800 dark:bg-slate-700 hover:bg-slate-700 dark:hover:bg-slate-600 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="1">1</button>
-                            <button class="bg-slate-800 dark:bg-slate-700 hover:bg-slate-700 dark:hover:bg-slate-600 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="2">2</button>
-                            <button class="bg-slate-800 dark:bg-slate-700 hover:bg-slate-700 dark:hover:bg-slate-600 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="3">3</button>
-                            <button class="bg-pink-600 hover:bg-pink-700 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="+">+</button>
-                            <button class="bg-slate-800 dark:bg-slate-700 hover:bg-slate-700 dark:hover:bg-slate-600 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center ${advancedMode ? '' : 'col-span-2'}" data-key="0">0</button>
-                            <button class="bg-slate-800 dark:bg-slate-700 hover:bg-slate-700 dark:hover:bg-slate-600 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key=".">.</button>
-                            <button class="bg-pink-600 hover:bg-pink-700 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center" data-key="=">=</button>
-                            ${advancedMode ? '<button class="bg-slate-800 dark:bg-slate-700 hover:bg-slate-700 dark:hover:bg-slate-600 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center col-span-2" data-key="00">00</button>' : ''}
+                            <button class="bg-purple-600 hover:bg-purple-500 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="AC">AC</button>
+                            <button class="bg-purple-600 hover:bg-purple-500 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="DEL">DEL</button>
+                            <button class="bg-purple-600 hover:bg-purple-500 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="%">%</button>
+                            <button class="bg-pink-600 hover:bg-pink-500 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="/">÷</button>
+                            <button class="bg-white/10 hover:bg-white/20 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="7">7</button>
+                            <button class="bg-white/10 hover:bg-white/20 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="8">8</button>
+                            <button class="bg-white/10 hover:bg-white/20 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="9">9</button>
+                            <button class="bg-pink-600 hover:bg-pink-500 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="*">x</button>
+                            <button class="bg-white/10 hover:bg-white/20 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="4">4</button>
+                            <button class="bg-white/10 hover:bg-white/20 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="5">5</button>
+                            <button class="bg-white/10 hover:bg-white/20 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="6">6</button>
+                            <button class="bg-pink-600 hover:bg-pink-500 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="-">-</button>
+                            <button class="bg-white/10 hover:bg-white/20 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="1">1</button>
+                            <button class="bg-white/10 hover:bg-white/20 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="2">2</button>
+                            <button class="bg-white/10 hover:bg-white/20 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="3">3</button>
+                            <button class="bg-pink-600 hover:bg-pink-500 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="+">+</button>
+                            <button class="bg-white/10 hover:bg-white/20 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light ${advancedMode ? '' : 'col-span-2'}" data-key="0">0</button>
+                            <button class="bg-white/10 hover:bg-white/20 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key=".">.</button>
+                            <button class="bg-pink-600 hover:bg-pink-500 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center shadow-light" data-key="=">=</button>
+                            ${advancedMode ? '<button class="bg-white/10 hover:bg-white/20 text-white font-bold rounded-3xl text-xl transition-all duration-200 active:scale-95 flex justify-center items-center col-span-2 shadow-light" data-key="00">00</button>' : ''}
                         </div>
                     </div>
                 </div>`;
             }
-            
-            const getTimeCalculatorHTML = () => `
+
+            const getInboundingCalculatorHTML = () => `
                 <div class="w-full max-w-2xl mx-auto p-4 md:p-6 space-y-8">
-                    <div class="liquid-glass rounded-3xl shadow-lg p-6">
-                        <h3 class="text-2xl font-bold text-pink-400 mb-4">Time Difference</h3>
-                        <div class="flex flex-wrap -mx-2 items-end">
-                            <div class="px-2 w-full md:w-1/2 mb-4 md:mb-0">
-                                <label for="start-time" class="block text-sm font-medium text-slate-300 mb-1">Start Date & Time</label>
-                                <input type="datetime-local" id="start-time" class="w-full p-2 rounded-3xl bg-slate-700 border border-slate-600 focus:outline-none focus:ring-2 focus:ring-pink-500">
+                    <div class="liquid-glass rounded-3xl shadow-heavy p-6 border border-white/10 bg-black/20">
+                        <h3 class="text-2xl font-bold text-pink-400 mb-4 text-center text-glow">Inbounding Calculator</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label for="inbound-cases" class="block text-sm font-medium text-slate-300 mb-1">Number of Cases/Cartons</label>
+                                <input type="number" id="inbound-cases" class="w-full p-3 rounded-3xl bg-white/10 border border-slate-500/30 focus:outline-none focus:ring-2 focus:ring-pink-500 text-white placeholder-slate-400 transition-all focus:bg-white/20" placeholder="e.g., 50">
                             </div>
-                            <div class="px-2 w-full md:w-1/2">
-                                <label for="end-time" class="block text-sm font-medium text-slate-300 mb-1">End Date & Time</label>
-                                <input type="datetime-local" id="end-time" class="w-full p-2 rounded-3xl bg-slate-700 border border-slate-600 focus:outline-none focus:ring-2 focus:ring-pink-500">
+                            <div>
+                                <label for="inbound-units" class="block text-sm font-medium text-slate-300 mb-1">Units per Case</label>
+                                <input type="number" id="inbound-units" class="w-full p-3 rounded-3xl bg-white/10 border border-slate-500/30 focus:outline-none focus:ring-2 focus:ring-pink-500 text-white placeholder-slate-400 transition-all focus:bg-white/20" placeholder="e.g., 12">
+                            </div>
+                            <div>
+                                <label for="inbound-expected" class="block text-sm font-medium text-slate-300 mb-1">Expected Total Units (Optional)</label>
+                                <input type="number" id="inbound-expected" class="w-full p-3 rounded-3xl bg-white/10 border border-slate-500/30 focus:outline-none focus:ring-2 focus:ring-pink-500 text-white placeholder-slate-400 transition-all focus:bg-white/20" placeholder="e.g., 600">
                             </div>
                         </div>
                         <div class="text-center mt-6">
-                            <button id="calc-diff-btn" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-3xl">Calculate Difference</button>
+                            <button id="calc-inbound-btn" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-3xl shadow-glow hover-zoom active-scale transition-all">Calculate</button>
                         </div>
-                        <div id="diff-result" class="text-center text-lg md:text-xl font-bold pt-4 mt-4 border-t border-slate-700/50 min-h-[2.25rem]"></div>
+                        <div id="inbound-result" class="text-center space-y-2 pt-6 mt-6 border-t border-slate-700/30 min-h-[4rem]">
+                            <div class="text-xl font-bold text-white">Total Units: <span id="total-units-display" class="text-pink-400">-</span></div>
+                            <div class="text-lg text-slate-300">Variance: <span id="variance-display" class="text-slate-300">-</span></div>
+                        </div>
                     </div>
-                    <div class="liquid-glass rounded-3xl shadow-lg p-6">
-                        <h3 class="text-2xl font-bold text-pink-400 mb-4">Add/Subtract Time</h3>
+                </div>`;
+
+            const getBatteryConverterHTML = () => `
+                <div class="w-full max-w-2xl mx-auto p-4 md:p-6 space-y-8">
+                    <div class="liquid-glass rounded-3xl shadow-heavy p-6 border border-white/10 bg-black/20">
+                        <h3 class="text-2xl font-bold text-pink-400 mb-4 text-center text-glow">Battery Converter</h3>
+                        <div class="space-y-4">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-300 mb-1">Voltage (V)</label>
+                                    <input type="number" id="battery-voltage" class="w-full p-3 rounded-3xl bg-white/10 border border-slate-500/30 focus:outline-none focus:ring-2 focus:ring-pink-500 text-white placeholder-slate-400 transition-all" placeholder="e.g., 3.7">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-300 mb-1">Convert From</label>
+                                    <select id="battery-mode" class="w-full p-3 rounded-3xl bg-white/10 border border-slate-500/30 focus:outline-none focus:ring-2 focus:ring-pink-500 text-white transition-all cursor-pointer">
+                                        <option class="bg-slate-800 text-white" value="mah_to_wh">mAh to Wh</option>
+                                        <option class="bg-slate-800 text-white" value="wh_to_mah">Wh to mAh</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label id="battery-input-label" class="block text-sm font-medium text-slate-300 mb-1">Capacity (mAh)</label>
+                                <input type="number" id="battery-input" class="w-full p-3 rounded-3xl bg-white/10 border border-slate-500/30 focus:outline-none focus:ring-2 focus:ring-pink-500 text-white placeholder-slate-400 transition-all" placeholder="Enter value">
+                            </div>
+                        </div>
+                        <div class="text-center mt-6">
+                            <button id="calc-battery-btn" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-3xl shadow-glow hover-zoom active-scale transition-all">Convert</button>
+                        </div>
+                        <div id="battery-result" class="text-center text-xl font-bold pt-6 mt-6 border-t border-slate-700/30 text-pink-400 min-h-[3rem]"></div>
+                    </div>
+                </div>`;
+            
+            const getTimeCalculatorHTML = () => `
+                <div class="w-full max-w-2xl mx-auto p-4 md:p-6 space-y-8">
+                    <div class="liquid-glass rounded-3xl shadow-heavy p-6 border border-white/10 bg-black/20">
+                        <h3 class="text-2xl font-bold text-pink-400 mb-4 text-glow">Time Difference</h3>
+                        <div class="flex flex-wrap -mx-2 items-end">
+                            <div class="px-2 w-full md:w-1/2 mb-4 md:mb-0">
+                                <label for="start-time" class="block text-sm font-medium text-slate-300 mb-1">Start Date & Time</label>
+                                <input type="datetime-local" id="start-time" class="w-full p-2 rounded-3xl bg-white/10 border border-slate-500/30 focus:outline-none focus:ring-2 focus:ring-pink-500 text-white">
+                            </div>
+                            <div class="px-2 w-full md:w-1/2">
+                                <label for="end-time" class="block text-sm font-medium text-slate-300 mb-1">End Date & Time</label>
+                                <input type="datetime-local" id="end-time" class="w-full p-2 rounded-3xl bg-white/10 border border-slate-500/30 focus:outline-none focus:ring-2 focus:ring-pink-500 text-white">
+                            </div>
+                        </div>
+                        <div class="text-center mt-6">
+                            <button id="calc-diff-btn" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-3xl shadow-light hover-zoom active-scale transition-all">Calculate Difference</button>
+                        </div>
+                        <div id="diff-result" class="text-center text-lg md:text-xl font-bold pt-4 mt-4 border-t border-slate-700/30 min-h-[2.25rem]"></div>
+                    </div>
+                    <div class="liquid-glass rounded-3xl shadow-heavy p-6 border border-white/10 bg-black/20">
+                        <h3 class="text-2xl font-bold text-pink-400 mb-4 text-glow">Add/Subtract Time</h3>
                         <div>
                              <label for="base-time" class="block text-sm font-medium text-slate-300 mb-1">Base Date & Time</label>
-                             <input type="datetime-local" id="base-time" class="w-full p-2 rounded-3xl bg-slate-700 border border-slate-600 focus:outline-none focus:ring-2 focus:ring-pink-500">
+                             <input type="datetime-local" id="base-time" class="w-full p-2 rounded-3xl bg-white/10 border border-slate-500/30 focus:outline-none focus:ring-2 focus:ring-pink-500 text-white">
                         </div>
                         <div class="flex flex-wrap -mx-2 mt-4">
-                            <div class="w-1/2 sm:w-1/4 px-2 mb-2"><label for="add-days" class="block text-sm text-center">Days</label><input type="number" id="add-days" min="0" class="w-full p-2 rounded-3xl bg-slate-700 border border-slate-600 text-center" placeholder="0"></div>
-                            <div class="w-1/2 sm:w-1/4 px-2 mb-2"><label for="add-hours" class="block text-sm text-center">Hours</label><input type="number" id="add-hours" min="0" class="w-full p-2 rounded-3xl bg-slate-700 border border-slate-600 text-center" placeholder="0"></div>
-                            <div class="w-1/2 sm:w-1/4 px-2 mb-2"><label for="add-mins" class="block text-sm text-center">Minutes</label><input type="number" id="add-mins" min="0" class="w-full p-2 rounded-3xl bg-slate-700 border border-slate-600 text-center" placeholder="0"></div>
-                            <div class="w-1/2 sm:w-1/4 px-2 mb-2"><label for="add-secs" class="block text-sm text-center">Seconds</label><input type="number" id="add-secs" min="0" class="w-full p-2 rounded-3xl bg-slate-700 border border-slate-600 text-center" placeholder="0"></div>
+                            <div class="w-1/2 sm:w-1/4 px-2 mb-2"><label for="add-days" class="block text-sm text-center">Days</label><input type="number" id="add-days" min="0" class="w-full p-2 rounded-3xl bg-white/10 border border-slate-500/30 text-center focus:outline-none focus:ring-2 focus:ring-pink-500 text-white" placeholder="0"></div>
+                            <div class="w-1/2 sm:w-1/4 px-2 mb-2"><label for="add-hours" class="block text-sm text-center">Hours</label><input type="number" id="add-hours" min="0" class="w-full p-2 rounded-3xl bg-white/10 border border-slate-500/30 text-center focus:outline-none focus:ring-2 focus:ring-pink-500 text-white" placeholder="0"></div>
+                            <div class="w-1/2 sm:w-1/4 px-2 mb-2"><label for="add-mins" class="block text-sm text-center">Minutes</label><input type="number" id="add-mins" min="0" class="w-full p-2 rounded-3xl bg-white/10 border border-slate-500/30 text-center focus:outline-none focus:ring-2 focus:ring-pink-500 text-white" placeholder="0"></div>
+                            <div class="w-1/2 sm:w-1/4 px-2 mb-2"><label for="add-secs" class="block text-sm text-center">Seconds</label><input type="number" id="add-secs" min="0" class="w-full p-2 rounded-3xl bg-white/10 border border-slate-500/30 text-center focus:outline-none focus:ring-2 focus:ring-pink-500 text-white" placeholder="0"></div>
                         </div>
                         <div class="flex justify-center gap-4 mt-6">
-                            <button id="add-time-btn" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-5 rounded-3xl">Add</button>
-                            <button id="subtract-time-btn" class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-2 px-5 rounded-3xl">Subtract</button>
+                            <button id="add-time-btn" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-5 rounded-3xl shadow-light hover-zoom active-scale transition-all">Add</button>
+                            <button id="subtract-time-btn" class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-2 px-5 rounded-3xl shadow-light hover-zoom active-scale transition-all">Subtract</button>
                         </div>
-                        <div id="add-subtract-result" class="text-center text-lg md:text-xl font-bold pt-4 mt-4 border-t border-slate-700/50 min-h-[2.25rem]"></div>
+                        <div id="add-subtract-result" class="text-center text-lg md:text-xl font-bold pt-4 mt-4 border-t border-slate-700/30 min-h-[2.25rem]"></div>
                     </div>
                 </div>`;
             
             const getConverterHTML = (title, units) => {
-                const options = units.map(u => `<option value="${u.value}">${u.name}</option>`).join('');
-                return `<div class="w-full max-w-lg mx-auto liquid-glass rounded-3xl shadow-lg p-6 space-y-6">
-                    <h2 class="text-2xl font-bold text-center text-pink-400">${title} Converter</h2>
+                const options = units.map(u => `<option class="bg-slate-800 text-white" value="${u.value}">${u.name}</option>`).join('');
+                return `<div class="w-full max-w-lg mx-auto liquid-glass rounded-3xl shadow-heavy p-6 space-y-6 border border-white/10 bg-black/20">
+                    <h2 class="text-2xl font-bold text-center text-pink-400 text-glow">${title} Converter</h2>
                     <div class="space-y-4">
                          <div>
                             <label class="block text-sm font-medium text-slate-300 mb-1">From</label>
                             <div class="flex flex-wrap gap-2">
-                                <input type="number" id="converter-input" class="flex-grow w-full min-w-[100px] p-2 rounded-3xl bg-slate-700 border border-slate-600 focus:outline-none focus:ring-2 focus:ring-pink-500" placeholder="Enter value">
-                                <select id="from-unit" class="flex-grow w-full min-w-[100px] p-2 rounded-3xl bg-slate-700 border border-slate-600 focus:outline-none focus:ring-2 focus:ring-pink-500">${options}</select>
+                                <input type="number" id="converter-input" class="flex-grow w-full min-w-[100px] p-2 rounded-3xl bg-white/10 border border-slate-500/30 focus:outline-none focus:ring-2 focus:ring-pink-500 text-white placeholder-slate-400 transition-all" placeholder="Enter value">
+                                <select id="from-unit" class="flex-grow w-full min-w-[100px] p-2 rounded-3xl bg-white/10 border border-slate-500/30 focus:outline-none focus:ring-2 focus:ring-pink-500 text-white cursor-pointer transition-all">${options}</select>
                             </div>
                          </div>
                          <div>
                             <label class="block text-sm font-medium text-slate-300 mb-1">To</label>
-                            <select id="to-unit" class="w-full p-2 rounded-3xl bg-slate-700 border border-slate-600 focus:outline-none focus:ring-2 focus:ring-pink-500">${options}</select>
+                            <select id="to-unit" class="w-full p-2 rounded-3xl bg-white/10 border border-slate-500/30 focus:outline-none focus:ring-2 focus:ring-pink-500 text-white cursor-pointer transition-all">${options}</select>
                          </div>
                     </div>
                     <div class="text-center">
-                        <button id="convert-btn" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-3xl">Convert</button>
+                        <button id="convert-btn" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-3xl shadow-light hover-zoom active-scale transition-all">Convert</button>
                     </div>
                     <div id="converter-result" class="text-center text-xl font-bold pt-4 min-h-[2rem]"></div>
                 </div>`;
@@ -471,41 +531,41 @@
             
             const getLikesDislikesHTML = () => `
                 <div class="w-full max-w-4xl mx-auto p-4 md:p-6 space-y-4 h-full flex flex-col">
-                    <h2 class="text-3xl font-bold text-pink-400 flex-shrink-0">Check %</h2>
-                    <div class="liquid-glass rounded-3xl shadow-lg p-4 flex-shrink-0 flex flex-wrap items-center gap-4">
+                    <h2 class="text-3xl font-bold text-pink-400 flex-shrink-0 text-glow">Check %</h2>
+                    <div class="liquid-glass rounded-3xl shadow-heavy p-4 flex-shrink-0 flex flex-wrap items-center gap-4 border border-white/10 bg-black/20">
                         <label for="likes-input" class="font-medium">Likes:</label>
-                        <input type="number" id="likes-input" class="bg-slate-800/60 border border-slate-700 rounded-3xl p-2 focus:outline-none focus:ring-2 focus:ring-pink-500 w-24" placeholder="12" min="0">
+                        <input type="number" id="likes-input" class="bg-white/10 border border-slate-500/30 rounded-3xl p-2 focus:outline-none focus:ring-2 focus:ring-pink-500 w-24 text-white transition-all" placeholder="12" min="0">
                         <label for="dislikes-input" class="font-medium">Dislikes:</label>
-                        <input type="number" id="dislikes-input" class="bg-slate-800/60 border border-slate-700 rounded-3xl p-2 focus:outline-none focus:ring-2 focus:ring-pink-500 w-24" placeholder="23" min="0">
-                        <button id="likes-submit-btn" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-3xl flex items-center gap-2 ml-auto">
+                        <input type="number" id="dislikes-input" class="bg-white/10 border border-slate-500/30 rounded-3xl p-2 focus:outline-none focus:ring-2 focus:ring-pink-500 w-24 text-white transition-all" placeholder="23" min="0">
+                        <button id="likes-submit-btn" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-3xl flex items-center gap-2 ml-auto shadow-light hover-zoom active-scale transition-all">
                             <i class="ri-send-plane-2-line icon-sm"></i> Submit</button>
                     </div>
-                    <div class="flex-grow liquid-glass rounded-3xl shadow-lg mt-4 flex flex-col overflow-hidden">
-                         <h3 class="text-xl font-bold p-4 border-b border-slate-700/50 flex-shrink-0">History</h3>
+                    <div class="flex-grow liquid-glass rounded-3xl shadow-heavy mt-4 flex flex-col overflow-hidden border border-white/10 bg-black/20">
+                         <h3 class="text-xl font-bold p-4 border-b border-slate-700/30 flex-shrink-0">History</h3>
                          <div id="likes-history-container" class="space-y-4 p-4 overflow-y-auto no-scrollbar"></div>
                     </div></div>`;
 
 
             const getSettingsHTML = () => `
                 <div class="w-full max-w-2xl mx-auto p-4 md:p-6 space-y-8">
-                    <div class="liquid-glass rounded-3xl shadow-lg p-6">
-                        <h2 class="text-2xl font-bold text-center text-pink-400 mb-4">Settings</h2>
+                    <div class="liquid-glass rounded-3xl shadow-heavy p-6 border border-white/10 bg-black/20">
+                        <h2 class="text-2xl font-bold text-center text-pink-400 mb-4 text-glow">Settings</h2>
                         <div class="space-y-4">
-                            <div class="flex items-center justify-between p-2 rounded-3xl hover:bg-slate-800/50">
+                            <div class="flex items-center justify-between p-2 rounded-3xl hover:bg-white/5 transition-colors">
                                 <label for="dark-mode-toggle" class="text-lg">Dark Mode</label>
                                 <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
                                     <input type="checkbox" name="dark-mode-toggle" id="dark-mode-toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
                                     <label for="dark-mode-toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
                                 </div>
                             </div>
-                            <div class="flex items-center justify-between p-2 rounded-3xl hover:bg-slate-800/50">
+                            <div class="flex items-center justify-between p-2 rounded-3xl hover:bg-white/5 transition-colors">
                                 <label for="decimals-toggle" class="text-lg">Show Decimals</label>
                                 <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
                                     <input type="checkbox" name="decimals-toggle" id="decimals-toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
                                     <label for="decimals-toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
                                 </div>
                             </div>
-                            <div class="flex items-center justify-between p-2 rounded-3xl hover:bg-slate-800/50">
+                            <div class="flex items-center justify-between p-2 rounded-3xl hover:bg-white/5 transition-colors">
                                 <label for="advanced-mode-toggle" class="text-lg">Advanced Mode</label>
                                 <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
                                     <input type="checkbox" name="advanced-mode-toggle" id="advanced-mode-toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
@@ -514,29 +574,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="liquid-glass rounded-3xl shadow-lg p-6">
-                         <h2 class="text-2xl font-bold text-center text-pink-400 mb-4">Changelog</h2>
+                    <div class="liquid-glass rounded-3xl shadow-heavy p-6 border border-white/10 bg-black/20">
+                         <h2 class="text-2xl font-bold text-center text-pink-400 mb-4 text-glow">Changelog</h2>
                          <div class="space-y-3 text-slate-300 max-h-64 overflow-y-auto">
+                            <div><strong class="text-purple-400">v1.8.6</strong><ul class="list-disc list-inside pl-2"><li>Added Inbounding Calculator.</li><li>Added Battery Converter.</li><li>Optimized layout structure and Liquid Glass effects.</li></ul></div>
                             <div><strong class="text-purple-400">v1.8.5</strong><ul class="list-disc list-inside pl-2"><li>Made the UI beautiful.</li></ul></div>
                             <div><strong class="text-purple-400">v1.8.4</strong><ul class="list-disc list-inside pl-2"><li>Added Programmer and Graphic calculators.</li></ul></div>
                             <div><strong class="text-purple-400">v1.8.3</strong><ul class="list-disc list-inside pl-2"><li>Added division by zero handling.</li><li>Added new '1e' operator in advanced mode.</li><li>Implemented AI suggestions for faster queries.</li></ul></div>
                             <div><strong class="text-purple-400">v1.8.2</strong><ul class="list-disc list-inside pl-2"><li>Replaced Google Material Symbols with Remix Icon font for a new look and feel.</li></ul></div>
                             <div><strong class="text-purple-400">v1.8.1</strong><ul class="list-disc list-inside pl-2"><li>Replaced custom SVGs with official Google Material Symbol SVGs to ensure correct branding and accessibility.</li><li>Removed external font stylesheet to improve performance and reliability in all regions.</li></ul></div>
                             <div><strong class="text-purple-400">v1.8.0</strong><ul class="list-disc list-inside pl-2"><li>Added Math Notes with canvas drawing and auto-solver.</li><li>Expanded all unit converters with more options.</li><li>Replaced Material Icons with custom SVGs for a lighter footprint.</li></ul></div>
-                            <div><strong class="text-purple-400">v1.7.3</strong><ul class="list-disc list-inside pl-2"><li>Reverted to Google Material Symbols from SVGs.</li></ul></div>
-                            <div><strong class="text-purple-400">v1.7.2</strong><ul class="list-disc list-inside pl-2"><li>Added liquid glass design.</li><li>Replaced Google Icons with custom SVGs.</li><li>Buttons are now fully rounded (30px).</li></ul></div>
-                            <div><strong class="text-purple-400">v1.7.1</strong><ul class="list-disc list-inside pl-2"><li>Fixed fuel converter.</li><li>Added repeating equals functionality to standard calculator.</li><li>Added units to all converter outputs.</li></ul></div>
-                            <div><strong class="text-purple-400">v1.7.0</strong><ul class="list-disc list-inside pl-2"><li>Added Offline Support (PWA).</li></ul></div>
-                            <div><strong class="text-purple-400">v1.6.2</strong><ul class="list-disc list-inside pl-2"><li>Added Fuel, Volume, Area, Power, Energy, and Force converters.</li></ul></div>
-                            <div><strong class="text-purple-400">v1.6.0</strong><ul class="list-disc list-inside pl-2"><li>Added full scientific calculator functionality in Advanced Mode.</li><li>Includes memory functions, trigonometry, logarithms, powers, and more.</li><li>New 5-column layout for advanced mode.</li></ul></div>
-                            <div><strong class="text-purple-400">v1.5.3</strong><ul class="list-disc list-inside pl-2"><li>Added Storage Converter.</li><li>Added Advanced Mode toggle in settings.</li><li>Major responsiveness overhaul for a more fluid experience on all screen sizes.</li></ul></div>
-                            <div><strong class="text-purple-400">v1.5.2</strong><ul class="list-disc list-inside pl-2"><li>Added Angle & Currency Converters.</li><li>Upgraded AI to solve more query types.</li><li>Added Copy & Delete to history items.</li></ul></div>
-                            <div><strong class="text-purple-400">v1.5.1</strong><ul class="list-disc list-inside pl-2"><li>Adjusted responsive width of the right-side panel.</li></ul></div>
-                            <div><strong class="text-purple-400">v1.5.0</strong><ul class="list-disc list-inside pl-2"><li>Added Pressure Converter.</li><li>Added Changelog to Settings page.</li></ul></div>
-                            <div><strong class="text-purple-400">v1.4.0</strong><ul class="list-disc list-inside pl-2"><li>Added Time Calculator.</li><li>Restored 'DEL' and '%' buttons.</li></ul></div>
-                            <div><strong class="text-purple-400">v1.3.0</strong><ul class="list-disc list-inside pl-2"><li>Added advanced 'Check %' for Likes vs. Dislikes.</li></ul></div>
-                            <div><strong class="text-purple-400">v1.2.0</strong><ul class="list-disc list-inside pl-2"><li>Major mobile responsiveness overhaul.</li></ul></div>
-                            <div><strong class="text-purple-400">v1.0.0</strong><ul class="list-disc list-inside pl-2"><li>Initial release of Munetios Calculator.</li></ul></div>
                          </div>
                     </div>
                     <div class="text-center text-slate-400 text-sm py-4">
@@ -549,98 +596,98 @@
 
             const getMathNotesHTML = () => `
                 <div class="w-full max-w-4xl mx-auto p-4 md:p-6 space-y-4 h-full flex flex-col">
-                    <h2 class="text-3xl font-bold text-pink-400 flex-shrink-0">Math Notes</h2>
-                    <div class="liquid-glass rounded-3xl shadow-lg p-4 flex-shrink-0 flex flex-wrap items-center gap-4">
+                    <h2 class="text-3xl font-bold text-pink-400 flex-shrink-0 text-glow">Math Notes</h2>
+                    <div class="liquid-glass rounded-3xl shadow-heavy p-4 flex-shrink-0 flex flex-wrap items-center gap-4 border border-white/10 bg-black/20">
                         <label class="font-medium">Color:</label>
                         <div id="color-palette" class="flex items-center gap-2">
-                            <div class="color-swatch active" style="background-color: #FFFFFF;" data-color="#FFFFFF"></div>
-                            <div class="color-swatch" style="background-color: #ef4444;" data-color="#ef4444"></div>
-                            <div class="color-swatch" style="background-color: #3b82f6;" data-color="#3b82f6"></div>
-                            <div class="color-swatch" style="background-color: #22c55e;" data-color="#22c55e"></div>
-                            <div class="color-swatch" style="background-color: #eab308;" data-color="#eab308"></div>
+                            <div class="color-swatch active shadow-sm" style="background-color: #FFFFFF;" data-color="#FFFFFF"></div>
+                            <div class="color-swatch shadow-sm" style="background-color: #ef4444;" data-color="#ef4444"></div>
+                            <div class="color-swatch shadow-sm" style="background-color: #3b82f6;" data-color="#3b82f6"></div>
+                            <div class="color-swatch shadow-sm" style="background-color: #22c55e;" data-color="#22c55e"></div>
+                            <div class="color-swatch shadow-sm" style="background-color: #eab308;" data-color="#eab308"></div>
                         </div>
                         <label for="pen-size" class="font-medium ml-4">Size:</label>
                         <input type="range" id="pen-size" min="1" max="20" value="2" class="w-24">
-                        <button id="clear-canvas-btn" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-3xl ml-auto">Clear</button>
+                        <button id="clear-canvas-btn" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-3xl ml-auto shadow-light hover-zoom active-scale transition-all">Clear</button>
                     </div>
-                    <div class="flex-grow liquid-glass rounded-3xl shadow-lg mt-4 flex flex-col overflow-hidden">
+                    <div class="flex-grow liquid-glass rounded-3xl shadow-heavy mt-4 flex flex-col overflow-hidden border border-white/10 bg-black/20">
                          <canvas id="math-canvas"></canvas>
                     </div>
-                    <div class="liquid-glass rounded-3xl shadow-lg p-4 flex-shrink-0 flex flex-wrap items-center gap-4">
+                    <div class="liquid-glass rounded-3xl shadow-heavy p-4 flex-shrink-0 flex flex-wrap items-center gap-4 border border-white/10 bg-black/20">
                         <label for="math-input" class="font-medium">Auto-Solve:</label>
-                        <input type="text" id="math-input" class="flex-grow bg-slate-800/60 border border-slate-700 rounded-3xl p-2 focus:outline-none focus:ring-2 focus:ring-pink-500" placeholder="e.g., (3 + 2) * 5">
-                        <button id="solve-math-btn" class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded-3xl">Solve</button>
+                        <input type="text" id="math-input" class="flex-grow bg-white/10 border border-slate-500/30 rounded-3xl p-2 focus:outline-none focus:ring-2 focus:ring-pink-500 text-white placeholder-slate-400 transition-all" placeholder="e.g., (3 + 2) * 5">
+                        <button id="solve-math-btn" class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded-3xl shadow-light hover-zoom active-scale transition-all">Solve</button>
                     </div>
                      <div id="math-solve-result" class="text-center text-xl font-bold p-2 min-h-[2rem]"></div>
                 </div>`;
             
             const getGraphicCalculatorHTML = () => `
                 <div class="w-full h-full p-4 flex flex-col gap-4">
-                    <h2 class="text-3xl font-bold text-pink-400 flex-shrink-0 text-center">Graphic Calculator</h2>
-                    <div class="liquid-glass rounded-3xl shadow-lg p-4 flex-shrink-0 flex flex-wrap items-center gap-4">
+                    <h2 class="text-3xl font-bold text-pink-400 flex-shrink-0 text-center text-glow">Graphic Calculator</h2>
+                    <div class="liquid-glass rounded-3xl shadow-heavy p-4 flex-shrink-0 flex flex-wrap items-center gap-4 border border-white/10 bg-black/20">
                         <label for="function-input" class="font-medium">f(x) =</label>
-                        <input type="text" id="function-input" class="flex-grow bg-slate-800/60 border border-slate-700 rounded-3xl p-2 focus:outline-none focus:ring-2 focus:ring-pink-500" value="sin(x)">
-                        <button id="plot-btn" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-3xl">Plot</button>
+                        <input type="text" id="function-input" class="flex-grow bg-white/10 border border-slate-500/30 rounded-3xl p-2 focus:outline-none focus:ring-2 focus:ring-pink-500 text-white placeholder-slate-400 transition-all" value="sin(x)">
+                        <button id="plot-btn" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-3xl shadow-light hover-zoom active-scale transition-all">Plot</button>
                     </div>
-                    <div id="plot-target" class="flex-grow liquid-glass rounded-3xl shadow-lg w-full h-full"></div>
+                    <div id="plot-target" class="flex-grow liquid-glass rounded-3xl shadow-heavy w-full h-full border border-white/10 bg-black/20"></div>
                 </div>`;
 
             const getProgrammerCalculatorHTML = () => `
-                <div id="programmer-calc" class="w-full max-w-2xl mx-auto h-full liquid-glass rounded-3xl shadow-lg p-4 flex flex-col gap-4">
+                <div id="programmer-calc" class="w-full max-w-2xl mx-auto h-full liquid-glass rounded-3xl shadow-heavy p-4 flex flex-col gap-4 border border-white/10 bg-black/20">
                     <div id="programmer-display" class="space-y-2">
                         <div class="flex items-center gap-2">
                             <label class="w-12 text-sm text-slate-400">HEX</label>
-                            <div id="hex-display" class="flex-1 text-right text-2xl font-mono bg-slate-800/60 p-2 rounded-xl truncate">0</div>
+                            <div id="hex-display" class="flex-1 text-right text-2xl font-mono bg-white/10 p-2 rounded-xl truncate border border-slate-500/30">0</div>
                         </div>
                         <div class="flex items-center gap-2">
                             <label class="w-12 text-sm text-slate-400">DEC</label>
-                            <div id="dec-display" class="flex-1 text-right text-3xl font-mono bg-slate-800/60 p-2 rounded-xl truncate text-pink-400">0</div>
+                            <div id="dec-display" class="flex-1 text-right text-3xl font-mono bg-white/10 p-2 rounded-xl truncate text-pink-400 border border-slate-500/30">0</div>
                         </div>
                         <div class="flex items-center gap-2">
                             <label class="w-12 text-sm text-slate-400">OCT</label>
-                            <div id="oct-display" class="flex-1 text-right text-2xl font-mono bg-slate-800/60 p-2 rounded-xl truncate">0</div>
+                            <div id="oct-display" class="flex-1 text-right text-2xl font-mono bg-white/10 p-2 rounded-xl truncate border border-slate-500/30">0</div>
                         </div>
                         <div class="flex items-center gap-2">
                             <label class="w-12 text-sm text-slate-400">BIN</label>
-                            <div id="bin-display" class="flex-1 text-right text-2xl font-mono bg-slate-800/60 p-2 rounded-xl truncate">0</div>
+                            <div id="bin-display" class="flex-1 text-right text-2xl font-mono bg-white/10 p-2 rounded-xl truncate border border-slate-500/30">0</div>
                         </div>
                     </div>
-                     <div id="programmer-mode-selector" class="flex justify-around bg-slate-800/60 p-1 rounded-3xl">
-                        <button data-mode="16" class="flex-1 p-1 rounded-3xl text-sm transition-colors">HEX</button>
-                        <button data-mode="10" class="flex-1 p-1 rounded-3xl text-sm transition-colors bg-purple-600">DEC</button>
-                        <button data-mode="8" class="flex-1 p-1 rounded-3xl text-sm transition-colors">OCT</button>
-                        <button data-mode="2" class="flex-1 p-1 rounded-3xl text-sm transition-colors">BIN</button>
+                     <div id="programmer-mode-selector" class="flex justify-around bg-white/10 p-1 rounded-3xl border border-slate-500/30">
+                        <button data-mode="16" class="flex-1 p-1 rounded-3xl text-sm transition-colors hover:bg-white/10">HEX</button>
+                        <button data-mode="10" class="flex-1 p-1 rounded-3xl text-sm transition-colors bg-purple-600 hover:bg-purple-500 shadow-glow">DEC</button>
+                        <button data-mode="8" class="flex-1 p-1 rounded-3xl text-sm transition-colors hover:bg-white/10">OCT</button>
+                        <button data-mode="2" class="flex-1 p-1 rounded-3xl text-sm transition-colors hover:bg-white/10">BIN</button>
                     </div>
                     <div id="programmer-keypad" class="grid grid-cols-6 gap-2 flex-grow">
-                        <button data-key="A" class="programmer-key hex-key bg-slate-700 hover:bg-slate-600 rounded-3xl disabled:opacity-50">A</button>
-                        <button data-op="&" class="programmer-key bg-purple-800 hover:bg-purple-900 rounded-3xl">AND</button>
-                        <button data-key="7" class="programmer-key digit-key bg-slate-800 hover:bg-slate-700 rounded-3xl">7</button>
-                        <button data-key="8" class="programmer-key digit-key bg-slate-800 hover:bg-slate-700 rounded-3xl">8</button>
-                        <button data-key="9" class="programmer-key digit-key bg-slate-800 hover:bg-slate-700 rounded-3xl">9</button>
-                        <button data-op="clear" class="programmer-key bg-purple-600 hover:bg-purple-700 rounded-3xl">C</button>
+                        <button data-key="A" class="programmer-key hex-key bg-slate-700/50 hover:bg-slate-600/50 rounded-3xl disabled:opacity-30 transition-all hover-zoom active-scale">A</button>
+                        <button data-op="&" class="programmer-key bg-purple-800/80 hover:bg-purple-700 rounded-3xl transition-all hover-zoom active-scale">AND</button>
+                        <button data-key="7" class="programmer-key digit-key bg-white/10 hover:bg-white/20 rounded-3xl transition-all hover-zoom active-scale">7</button>
+                        <button data-key="8" class="programmer-key digit-key bg-white/10 hover:bg-white/20 rounded-3xl transition-all hover-zoom active-scale">8</button>
+                        <button data-key="9" class="programmer-key digit-key bg-white/10 hover:bg-white/20 rounded-3xl transition-all hover-zoom active-scale">9</button>
+                        <button data-op="clear" class="programmer-key bg-purple-600 hover:bg-purple-700 rounded-3xl transition-all hover-zoom active-scale shadow-light">C</button>
                         
-                        <button data-key="B" class="programmer-key hex-key bg-slate-700 hover:bg-slate-600 rounded-3xl disabled:opacity-50">B</button>
-                        <button data-op="|" class="programmer-key bg-purple-800 hover:bg-purple-900 rounded-3xl">OR</button>
-                        <button data-key="4" class="programmer-key digit-key bg-slate-800 hover:bg-slate-700 rounded-3xl">4</button>
-                        <button data-key="5" class="programmer-key digit-key bg-slate-800 hover:bg-slate-700 rounded-3xl">5</button>
-                        <button data-key="6" class="programmer-key digit-key bg-slate-800 hover:bg-slate-700 rounded-3xl">6</button>
-                        <button data-op="del" class="programmer-key bg-purple-600 hover:bg-purple-700 rounded-3xl">DEL</button>
+                        <button data-key="B" class="programmer-key hex-key bg-slate-700/50 hover:bg-slate-600/50 rounded-3xl disabled:opacity-30 transition-all hover-zoom active-scale">B</button>
+                        <button data-op="|" class="programmer-key bg-purple-800/80 hover:bg-purple-700 rounded-3xl transition-all hover-zoom active-scale">OR</button>
+                        <button data-key="4" class="programmer-key digit-key bg-white/10 hover:bg-white/20 rounded-3xl transition-all hover-zoom active-scale">4</button>
+                        <button data-key="5" class="programmer-key digit-key bg-white/10 hover:bg-white/20 rounded-3xl transition-all hover-zoom active-scale">5</button>
+                        <button data-key="6" class="programmer-key digit-key bg-white/10 hover:bg-white/20 rounded-3xl transition-all hover-zoom active-scale">6</button>
+                        <button data-op="del" class="programmer-key bg-purple-600 hover:bg-purple-700 rounded-3xl transition-all hover-zoom active-scale shadow-light">DEL</button>
                         
-                        <button data-key="C" class="programmer-key hex-key bg-slate-700 hover:bg-slate-600 rounded-3xl disabled:opacity-50">C</button>
-                        <button data-op="^" class="programmer-key bg-purple-800 hover:bg-purple-900 rounded-3xl">XOR</button>
-                        <button data-key="1" class="programmer-key digit-key bg-slate-800 hover:bg-slate-700 rounded-3xl">1</button>
-                        <button data-key="2" class="programmer-key digit-key bg-slate-800 hover:bg-slate-700 rounded-3xl">2</button>
-                        <button data-key="3" class="programmer-key digit-key bg-slate-800 hover:bg-slate-700 rounded-3xl">3</button>
-                        <button data-op="=" class="programmer-key bg-pink-600 hover:bg-pink-700 rounded-3xl row-span-2">=</button>
+                        <button data-key="C" class="programmer-key hex-key bg-slate-700/50 hover:bg-slate-600/50 rounded-3xl disabled:opacity-30 transition-all hover-zoom active-scale">C</button>
+                        <button data-op="^" class="programmer-key bg-purple-800/80 hover:bg-purple-700 rounded-3xl transition-all hover-zoom active-scale">XOR</button>
+                        <button data-key="1" class="programmer-key digit-key bg-white/10 hover:bg-white/20 rounded-3xl transition-all hover-zoom active-scale">1</button>
+                        <button data-key="2" class="programmer-key digit-key bg-white/10 hover:bg-white/20 rounded-3xl transition-all hover-zoom active-scale">2</button>
+                        <button data-key="3" class="programmer-key digit-key bg-white/10 hover:bg-white/20 rounded-3xl transition-all hover-zoom active-scale">3</button>
+                        <button data-op="=" class="programmer-key bg-pink-600 hover:bg-pink-500 rounded-3xl row-span-2 transition-all hover-zoom active-scale shadow-glow">=</button>
 
-                        <button data-key="D" class="programmer-key hex-key bg-slate-700 hover:bg-slate-600 rounded-3xl disabled:opacity-50">D</button>
-                        <button data-op="~" class="programmer-key bg-purple-800 hover:bg-purple-900 rounded-3xl">NOT</button>
-                        <button data-key="0" class="programmer-key digit-key bg-slate-800 hover:bg-slate-700 rounded-3xl col-span-3">0</button>
+                        <button data-key="D" class="programmer-key hex-key bg-slate-700/50 hover:bg-slate-600/50 rounded-3xl disabled:opacity-30 transition-all hover-zoom active-scale">D</button>
+                        <button data-op="~" class="programmer-key bg-purple-800/80 hover:bg-purple-700 rounded-3xl transition-all hover-zoom active-scale">NOT</button>
+                        <button data-key="0" class="programmer-key digit-key bg-white/10 hover:bg-white/20 rounded-3xl col-span-3 transition-all hover-zoom active-scale">0</button>
                         
-                        <button data-key="E" class="programmer-key hex-key bg-slate-700 hover:bg-slate-600 rounded-3xl disabled:opacity-50">E</button>
-                        <button data-op="<<" class="programmer-key bg-purple-800 hover:bg-purple-900 rounded-3xl">LSH</button>
-                        <button data-key="F" class="programmer-key hex-key bg-slate-700 hover:bg-slate-600 rounded-3xl disabled:opacity-50">F</button>
-                        <button data-op=">>" class="programmer-key bg-purple-800 hover:bg-purple-900 rounded-3xl">RSH</button>
+                        <button data-key="E" class="programmer-key hex-key bg-slate-700/50 hover:bg-slate-600/50 rounded-3xl disabled:opacity-30 transition-all hover-zoom active-scale">E</button>
+                        <button data-op="<<" class="programmer-key bg-purple-800/80 hover:bg-purple-700 rounded-3xl transition-all hover-zoom active-scale">LSH</button>
+                        <button data-key="F" class="programmer-key hex-key bg-slate-700/50 hover:bg-slate-600/50 rounded-3xl disabled:opacity-30 transition-all hover-zoom active-scale">F</button>
+                        <button data-op=">>" class="programmer-key bg-purple-800/80 hover:bg-purple-700 rounded-3xl transition-all hover-zoom active-scale">RSH</button>
                     </div>
                 </div>`;
             
@@ -653,6 +700,8 @@
                     standard: getStandardCalculatorHTML,
                     graphic: getGraphicCalculatorHTML,
                     programmer: getProgrammerCalculatorHTML,
+                    inbounding: getInboundingCalculatorHTML,
+                    battery: getBatteryConverterHTML,
                     math_notes: getMathNotesHTML,
                     time: getTimeCalculatorHTML,
                     storage: () => getConverterHTML('Storage', unitDefinitions.storage),
@@ -676,6 +725,8 @@
                     standard: attachStandardCalculatorListeners,
                     graphic: attachGraphicCalculatorListeners,
                     programmer: attachProgrammerCalculatorListeners,
+                    inbounding: attachInboundingListeners,
+                    battery: attachBatteryConverterListeners,
                     math_notes: attachMathNotesListeners,
                     time: attachTimeCalculatorListeners,
                     storage: () => attachConverterListeners('storage'),
@@ -709,18 +760,18 @@
 
                 const filteredHistory = state.history.filter(item => item.toLowerCase().includes(filter.toLowerCase()));
                 listElem.innerHTML = filteredHistory.length ? filteredHistory.map((item, index) =>
-                    `<div class="bg-slate-800/50 p-2 rounded-3xl flex items-center justify-between">
-                        <span class="history-text truncate pr-2">${item}</span>
+                    `<div class="bg-white/5 p-2 rounded-3xl flex items-center justify-between hover:bg-white/10 transition-colors">
+                        <span class="history-text truncate pr-2 text-slate-300">${item}</span>
                         <div class="flex items-center flex-shrink-0">
-                            <button class="p-1 hover:bg-purple-700/50 rounded-full copy-btn" data-index="${index}" title="Copy">
+                            <button class="p-1 hover:bg-purple-700/50 rounded-full copy-btn text-slate-300 hover:text-white transition-colors" data-index="${index}" title="Copy">
                                 <i class="ri-file-copy-line icon-sm"></i>
                             </button>
-                            <button class="p-1 hover:bg-red-700/50 rounded-full delete-btn" data-index="${index}" title="Delete">
+                            <button class="p-1 hover:bg-red-700/50 rounded-full delete-btn text-slate-300 hover:text-white transition-colors" data-index="${index}" title="Delete">
                                 <i class="ri-delete-bin-line icon-sm"></i>
                             </button>
                         </div>
                      </div>`
-                ).join('') : '<p class="text-slate-400 text-center">No history yet.</p>';
+                ).join('') : '<p class="text-slate-500 text-center">No history yet.</p>';
             }
 
             function updateUI() {
@@ -744,7 +795,7 @@
                     if (rightPanelsContainer.contains(aiPanel)) panelTemplates.appendChild(aiPanel);
 
                     if (width < 600) { 
-                        sidebar.classList.add('fixed', 'top-0', 'left-0', 'h-full', 'z-40');
+                        sidebar.classList.add('fixed', 'top-0', 'left-0', 'h-full');
                         sidebar.style.transform = state.isSidebarOpen ? 'translateX(0)' : 'translateX(-100%)';
                         sidebar.style.width = '256px';
                         document.querySelectorAll('.sidebar-text').forEach(el => el.classList.remove('hidden'));
@@ -755,7 +806,7 @@
                         mobileSearchBtn.classList.remove('hidden');
                     } else { 
                         if(state.isMobileSheetOpen) toggleMobileSheet(false);
-                        sidebar.classList.remove('fixed', 'top-0', 'left-0', 'h-full', 'z-40');
+                        sidebar.classList.remove('fixed', 'top-0', 'left-0', 'h-full');
                         sidebar.style.transform = 'translateX(0)';
                         state.isSidebarOpen = false;
                         sidebar.style.width = '70px';
@@ -772,7 +823,7 @@
                     }
                 } else { 
                     if(state.isMobileSheetOpen) toggleMobileSheet(false);
-                    sidebar.classList.remove('fixed', 'top-0', 'left-0', 'h-full', 'z-40');
+                    sidebar.classList.remove('fixed', 'top-0', 'left-0', 'h-full');
                     sidebar.style.transform = 'translateX(0)';
                     state.isSidebarOpen = false;
                     
@@ -825,8 +876,9 @@
             
             function updateActiveNav(){
                  document.querySelectorAll('#sidebar-nav button').forEach(button => {
-                    button.classList.toggle('bg-pink-600/50', button.dataset.page === state.currentPage);
+                    button.classList.toggle('bg-purple-600/80', button.dataset.page === state.currentPage);
                     button.classList.toggle('text-white', button.dataset.page === state.currentPage);
+                    button.classList.toggle('shadow-glow', button.dataset.page === state.currentPage);
                 })
             }
             
@@ -1047,6 +1099,88 @@
                 });
             }
 
+            function attachInboundingListeners() {
+                const casesInput = document.getElementById('inbound-cases');
+                const unitsInput = document.getElementById('inbound-units');
+                const expectedInput = document.getElementById('inbound-expected');
+                const calcBtn = document.getElementById('calc-inbound-btn');
+                const totalDisplay = document.getElementById('total-units-display');
+                const varianceDisplay = document.getElementById('variance-display');
+
+                calcBtn.addEventListener('click', () => {
+                    const cases = parseInt(casesInput.value) || 0;
+                    const unitsPerCase = parseInt(unitsInput.value) || 0;
+                    const expected = parseInt(expectedInput.value);
+
+                    const total = cases * unitsPerCase;
+                    totalDisplay.innerText = total;
+
+                    let historyMsg = `Inbounding: ${cases} cases * ${unitsPerCase} units = ${total} total`;
+
+                    if (!isNaN(expected)) {
+                        const variance = total - expected;
+                        varianceDisplay.innerText = variance > 0 ? `+${variance}` : variance;
+                        varianceDisplay.className = variance === 0 ? 'text-green-400' : (variance > 0 ? 'text-blue-400' : 'text-red-400');
+                        historyMsg += ` (Variance: ${variance})`;
+                    } else {
+                         varianceDisplay.innerText = '-';
+                         varianceDisplay.className = 'text-slate-300';
+                    }
+                    addToHistory(historyMsg);
+                });
+            }
+
+            function attachBatteryConverterListeners() {
+                const voltageInput = document.getElementById('battery-voltage');
+                const modeSelect = document.getElementById('battery-mode');
+                const inputField = document.getElementById('battery-input');
+                const inputLabel = document.getElementById('battery-input-label');
+                const calcBtn = document.getElementById('calc-battery-btn');
+                const resultDisplay = document.getElementById('battery-result');
+
+                modeSelect.addEventListener('change', () => {
+                    if (modeSelect.value === 'mah_to_wh') {
+                        inputLabel.innerText = 'Capacity (mAh)';
+                        inputField.placeholder = 'Enter mAh';
+                    } else {
+                        inputLabel.innerText = 'Energy (Wh)';
+                        inputField.placeholder = 'Enter Wh';
+                    }
+                });
+
+                calcBtn.addEventListener('click', () => {
+                    const voltage = parseFloat(voltageInput.value);
+                    const inputVal = parseFloat(inputField.value);
+
+                    if (isNaN(voltage) || isNaN(inputVal)) {
+                        resultDisplay.innerText = "Please enter valid numbers for Voltage and Input.";
+                        return;
+                    }
+
+                    let resultText = '';
+                    let historyText = '';
+
+                    if (modeSelect.value === 'mah_to_wh') {
+                        // Wh = (mAh * V) / 1000
+                        const wh = (inputVal * voltage) / 1000;
+                        resultText = `${inputVal} mAh @ ${voltage}V = ${wh.toFixed(3)} Wh`;
+                        historyText = `Battery: ${inputVal} mAh @ ${voltage}V -> ${wh.toFixed(3)} Wh`;
+                    } else {
+                        // mAh = (Wh * 1000) / V
+                        if (voltage === 0) {
+                             resultDisplay.innerText = "Voltage cannot be zero.";
+                             return;
+                        }
+                        const mah = (inputVal * 1000) / voltage;
+                        resultText = `${inputVal} Wh @ ${voltage}V = ${mah.toFixed(0)} mAh`;
+                        historyText = `Battery: ${inputVal} Wh @ ${voltage}V -> ${mah.toFixed(0)} mAh`;
+                    }
+
+                    resultDisplay.innerText = resultText;
+                    addToHistory(historyText);
+                });
+            }
+
             function attachTimeCalculatorListeners() {
                 const startTime = document.getElementById('start-time');
                 const endTime = document.getElementById('end-time');
@@ -1218,7 +1352,7 @@
                 submitBtn.addEventListener('click', () => {
                     const likes=parseInt(likesInput.value,10)||0, dislikes=parseInt(dislikesInput.value,10)||0; if(likes<0||dislikes<0)return;
                     const total=likes+dislikes, positivePercent=total===0?0:(likes/total)*100, entryNum=state.likesDislikesHistory.length+1, resultText=`Entry ${entryNum}: (${positivePercent.toFixed(1)}% positive) (${likes} likes, ${dislikes} dislikes)`;
-                    const entryHTML=`<div class="liquid-glass p-3 rounded-3xl"><p class="text-sm text-slate-300">${resultText}</p><div class="w-full bg-slate-700 rounded-full h-2.5 mt-2"><div class="bg-green-500 h-2.5 rounded-full" style="width:${positivePercent}%"></div></div></div>`;
+                    const entryHTML=`<div class="liquid-glass p-3 rounded-3xl border border-white/10 bg-black/20"><p class="text-sm text-slate-300">${resultText}</p><div class="w-full bg-slate-700 rounded-full h-2.5 mt-2"><div class="bg-green-500 h-2.5 rounded-full" style="width:${positivePercent}%"></div></div></div>`;
                     state.likesDislikesHistory.unshift({html:entryHTML}); localStorage.setItem('likesDislikesHistory', JSON.stringify(state.likesDislikesHistory)); renderLikesHistory();
                     addToHistory(`Likes/Dislikes: ${resultText}`); likesInput.value=''; dislikesInput.value='';
                 });
@@ -1393,6 +1527,7 @@
                 function updateModeUI() {
                     document.querySelectorAll('#programmer-mode-selector button').forEach(btn => {
                         btn.classList.toggle('bg-purple-600', parseInt(btn.dataset.mode) === currentMode);
+                        btn.classList.toggle('shadow-glow', parseInt(btn.dataset.mode) === currentMode);
                     });
 
                     document.querySelectorAll('.programmer-key').forEach(btn => {
@@ -1738,4 +1873,3 @@
     </script>
 </body>
 </html>
-
